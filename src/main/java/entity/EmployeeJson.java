@@ -23,4 +23,5 @@ public class EmployeeJson extends Employee {
     public double getSalaryPerMonth() {
         return salaryPerMonth;
     }
+
 }

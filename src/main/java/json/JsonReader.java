@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class JsonReader {
     private static final Logger log = Logger.getLogger(JsonReader.class);
 
-    public static void main(String[] args) {
+    public static List<Employee> reader() {
         ObjectMapper mapper = new ObjectMapper();
         String json;
         List<Employee> employees = null;
@@ -33,5 +33,6 @@ public class JsonReader {
         } catch (IOException e) {
             log.error(Messages.ERROR_CANNOT_READ_FILE);
         }
+        return employees;
     }
 }

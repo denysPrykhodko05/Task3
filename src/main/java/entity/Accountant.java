@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Accountant {
-    public static final Logger log = Logger.getLogger(Accountant.class);
+    private static final Logger log = Logger.getLogger(Accountant.class);
 
-    public static void jsonWriter() {
+    public static boolean jsonWriter() {
         ObjectMapper mapper = new ObjectMapper();
         int maxWorkRate = 40000;
         int minWorkRate = 20000;
@@ -37,7 +37,8 @@ public class Accountant {
             log.trace(Messages.TRACE_WRITE_TO_FILE + json);
         } catch (IOException e) {
             log.error(Messages.ERROR_CANNOT_WRITE_TO_FILE);
+            return false;
         }
-
+        return true;
     }
 }
